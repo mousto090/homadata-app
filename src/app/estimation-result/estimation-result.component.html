@@ -1,0 +1,33 @@
+<div class="estimation-result">
+  <h3 class="step-title">Estimation de votre bien</h3>
+  <div class="estimation-result-card">
+    <div class="result-card-body">
+      <div class="icon-wrapper">
+        <mat-icon class="icon">{{propertyType === 'Maison' ? 'house': 'apartment'}}</mat-icon>
+      </div>
+      <div class="property-info">
+        <div class="type">{{propertyType[estimationData.type]}}</div>
+        <div class="info-inner">
+          <div class="surface">De <span class="surface-number">{{estimationData.surface}}</span> m<sup>2</sup></div>
+          <div class="pieces">Avec <span class="pieces-count">{{estimationData.nbPieces}}</span> pièce(s)</div>
+          <div class="state">{{propertyState[estimationData.state]}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="result-card-footer">
+      <app-spinner></app-spinner>
+      <div class="total-price-container" *ngIf="estimationData.estimatedPrice">
+        <div class="label">Prix estimé</div>
+        <div class="total">{{estimationData.estimatedPrice | number:'':'fr-FR'}} €</div>
+        <div class="price">Soit <span>{{estimationData.prix}} € / m<sup>2</sup></span></div>
+      </div>
+      <div class="btn-container">
+        <a *ngIf="estimationData.estimatedPrice" routerLink="/" mat-stroked-button color="primary">Nouvelle
+          estimation</a>
+        <button *ngIf="error" mat-stroked-button color="primary" (click)="estimate()"
+          [disabled]="isLoading">Réessayer</button>
+      </div>
+    </div>
+  </div>
+
+</div>

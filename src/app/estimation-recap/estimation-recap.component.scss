@@ -1,0 +1,66 @@
+@import '../../variables';
+
+.estimation-recap {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.estimation-recap-card {
+  border: 1px solid mat-color($primary);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-width: 250px;
+}
+
+.recap-card-body {
+  &>* {
+    padding: .5rem 0;
+  }
+
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+
+  .type {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .surface-number {
+    line-height: 70px;
+    position: relative;
+    font-size: 60px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .pieces-count {
+    font-size: 2rem;
+  }
+
+  .state {
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .price-val {
+    font-size: 1.6rem;
+  }
+}
+
+.card-footer {
+  padding: 1rem;
+  border-top: 1px solid mat-color($primary);
+
+  .btn-estimation {
+    letter-spacing: .2px;
+  }
+}
+
+@media(max-width: 350px) {
+  .estimation-recap-card {
+    margin: auto;
+  }
+}

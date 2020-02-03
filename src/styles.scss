@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgba(0, 0, 0, .03);
+}
+
+.page-content-card {
+  max-width: 1000px;
+  min-height: calc(100vh - 100px);
+  margin: auto;
+  border-radius: 0 !important;
+}
+
+.header-title {
+  padding: 5px 0px 15px 0px;
+  padding: 0px 0px 15px 0px;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.87);
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.step-title {
+  color: #494848;
+  font-weight: 500;
+}
+
+
+
+// .mat-horizontal-stepper-header{
+//     pointer-events: none !important;
+// }

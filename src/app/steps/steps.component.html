@@ -1,0 +1,63 @@
+<form [formGroup]="form">
+  <app-stepper formArrayName="formArray" linear #stepper (selectionChange)="stepperSelectionChange($event)">
+
+    <cdk-step formGroupName="0" [stepControl]="formArray?.get([0])">
+      <div class="step-body">
+        <h3 class="step-title">Informations du bien</h3>
+        <mat-form-field>
+          <input matInput placeholder="Prix au mètre carré" type="number" min="1" class="right-align"
+            formControlName="prix">
+          <span matSuffix>&nbsp;€ / m<sup>2</sup></span>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Surface" type="number" min="1" class="right-align" formControlName="surface">
+          <span matSuffix>&nbsp;m<sup>2</sup></span>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Nombre de pièces" type="number" min="1" class="right-align"
+            formControlName="nbPieces">
+          <span matSuffix>&nbsp;pièce(s)</span>
+        </mat-form-field>
+      </div>
+    </cdk-step>
+
+    <cdk-step formGroupName="1" [stepControl]="formArray?.get([1])">
+      <div class="step-body">
+        <h3 class="step-title">Quel est le type du bien ?</h3>
+        <div class="property-types">
+          <mat-radio-group aria-labelledby="type-radio-group-label" class="type-radio-group" formControlName="type"
+            (change)="selectedPropertyTypeChange()">
+            <mat-radio-button color="primary" class="type-radio-button"
+              *ngFor="let propertyType of propertyTypes let i=index;" [value]="i">
+              <span [ngClass]="{'content-wrapper': true, 'selected': selectedPropertyType === i}">
+                <mat-icon class="icon">{{propertyType === 'Maison' ? 'house': 'apartment'}}</mat-icon>
+                <span class="title">{{propertyType}}</span>
+              </span>
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </cdk-step>
+
+    <cdk-step formGroupName="2" [stepControl]="formArray?.get([2])">
+      <div class="step-body">
+        <h3 class="step-title">Quel est le l'état général du bien ?</h3>
+        <div class="property-states">
+          <mat-radio-group aria-labelledby="states-radio-group-label" class="state-radio-group" formControlName="state">
+            <mat-radio-button color="primary" class="state-radio-button"
+              *ngFor="let state of propertyStates let i = index;" [value]="i">
+              {{state}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </cdk-step>
+
+    <cdk-step [label]="'recap'">
+      <div class="step-body">
+        <h3 class="step-title">Votre bien Immobilier</h3>
+        <app-estimation-recap></app-estimation-recap>
+      </div>
+    </cdk-step>
+  </app-stepper>
+</form>

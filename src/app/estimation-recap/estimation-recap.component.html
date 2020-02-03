@@ -1,0 +1,16 @@
+<div class="estimation-recap">
+  <div class="estimation-recap-card">
+    <div class="recap-card-body">
+      <h3 class="type">{{propertyType[recapData.type]}}</h3>
+      <div class="surface">De <span class="surface-number">{{recapData.surface}}</span> m<sup>2</sup></div>
+      <div class="pieces">Avec <span class="pieces-count">{{recapData.nbPieces}}</span> pièce(s)</div>
+      <div class="state">{{propertyState[recapData.state]}}</div>
+      <div class="prix">Coûte <span class="price-val">{{recapData.prix}}</span> € / m<sup>2</sup></div>
+    </div>
+    <div class="card-footer">
+      <a routerLink="estimation-result" mat-raised-button color="primary" (click)="onEstimateClick()"> Voir l'estimation
+      </a>
+    </div>
+
+  </div>
+</div>

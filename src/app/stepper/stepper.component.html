@@ -1,0 +1,16 @@
+<section class="step-container">
+  <header>
+    <h2 class="header-title">Étape {{ selectedIndex + 1 }}/{{ steps.length }}</h2>
+  </header>
+
+  <div [style.display]="selected ? 'block' : 'none'">
+    <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+  </div>
+
+  <footer class="step-navigation-bar">
+    <button *ngIf="selectedIndex !== 0" mat-stroked-button color="primary" cdkStepperPrevious>&larr; Retour</button>
+    <button *ngIf="selectedIndex +1 !== steps.length" mat-stroked-button color="primary" cdkStepperNext>Suivant
+      &rarr;</button>
+  </footer>
+
+</section>
