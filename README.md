@@ -8,3 +8,7 @@ Exécuter `ng serve` pour démarrer le serveur en mode dev puis `http://localhos
 
 
 Exécuter `ng build` pour créer un bundle pour un dépoloiement en production. 
+
+
+## Demo
+Une démo de de l'application :  https://homadata-app.firebaseapp.com/
