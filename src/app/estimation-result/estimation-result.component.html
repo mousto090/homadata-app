@@ -3,7 +3,7 @@
   <div class="estimation-result-card">
     <div class="result-card-body">
       <div class="icon-wrapper">
-        <mat-icon class="icon">{{propertyType === 'Maison' ? 'house': 'apartment'}}</mat-icon>
+        <mat-icon class="icon">{{propertyType[estimationData.type] === 'Maison' ? 'house': 'apartment'}}</mat-icon>
       </div>
       <div class="property-info">
         <div class="type">{{propertyType[estimationData.type]}}</div>
