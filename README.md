@@ -4,6 +4,7 @@ Ce projet a été généré avec [Angular CLI](https://github.com/angular/angula
 
 ## Development server
 
+Exécuter `npm install` pour installer les dépendences 
 Exécuter `ng serve` pour démarrer le serveur en mode dev puis `http://localhost:4200/`. L'application se rechargera automatiquement si vous modifiez l'un des fichiers sources.
 
 
